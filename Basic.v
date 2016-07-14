@@ -1,5 +1,13 @@
 Inductive Pitch := pA | pB | pC | pD | pE | pF | pG.
 
+Require Import Coq.Init.Datatypes.
+
+Set Implicit Arguments.
+
+Inductive Fin : nat -> Set :=
+  | FZ : forall n, Fin (S n)
+  | FS : forall n, Fin n -> Fin (S n).
+
 Inductive PitchName : Set :=
   | nCb | nC | nCs
   | nDb | nD | nDs
